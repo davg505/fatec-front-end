@@ -1,16 +1,9 @@
 // App.js
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { Header } from './components/Header';
 import logo from './image/logoSite2.png';
-import Login from '../Login/Login';
-import {
-  Switch,
-  Route,
-  Link,
-  Routes,
-  BrowserRouter
-} from "react-router-dom";
+
 
 function App() {
 

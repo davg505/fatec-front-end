@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.nav`
-  background-color: #007bff;
+  background-color: black; /* Alterado para preto */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -11,6 +11,6 @@ export const Button = styled.nav`
   outline: none;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #333; /* Alterado para um tom mais escuro ao passar o mouse */
   }
 `;
