@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom'; // Altere a importação para 'react-dom'
 import './index.css';
 
 import {
@@ -7,21 +7,22 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import Login from './Pages/Login/Login';
+import Alunos from './Pages/Aluno/Alunos';
 import App from './Pages/Pagina inicial/App';
+import Professor from './Pages/Professores/Professor';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<App />} />
-        
-        <Route path="/login" element={<Login />} /> 
+        <Route path="/alunos" element={<Alunos />} /> 
+        <Route path="/professor" element={<Professor />} /> 
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 

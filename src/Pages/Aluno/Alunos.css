@@ -1,0 +1,23 @@
+.Alunos {
+  text-align: center;
+}
+
+.Red-bar {
+  background-color: rgb(5, 5, 5);
+  height: 100px; /* Ajuste a altura conforme necessário */
+  width: 100%;
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+}
+
+.Red-bar img {
+  width: 150px; /* Ajuste conforme necessário para o tamanho desejado */
+  height: auto; /* Mantenha a proporção original da imagem */
+  margin-left: 20px; /* Adicione margem à esquerda para separar do conteúdo do cabeçalho */
+}
+
+.Red-bar-down {
+  background-color: rgba(160, 159, 159, 0.826);
+  height: 50px; /* Ajuste a altura conforme necessário */
+  width: 100%;
+}

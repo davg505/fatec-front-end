@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importe o useNavigate
 
-const Login = () => {
+const LoginProfessor = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Use o useNavigate para navegação
@@ -20,7 +20,7 @@ const Login = () => {
     // Adicione aqui a lógica para autenticar o usuário
     console.log('Username:', username);
     console.log('Password:', password);
-    if (username === 'aluno@fatec.br' && password === 'aluno') {
+    if (username === 'professor@fatec.br' && password === 'professor') {
       // Redirecione para a rota '/alunos' se forem corretos
       navigate('/alunos');
     } else {
@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login Aluno</h2>
+      <h2>Login Professor</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Usuario:
@@ -60,4 +60,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginProfessor;
