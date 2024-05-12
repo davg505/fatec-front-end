@@ -22,7 +22,7 @@ const LoginProfessor = () => {
     console.log('Password:', password);
     if (username === 'professor@fatec.br' && password === 'professor') {
       // Redirecione para a rota '/alunos' se forem corretos
-      navigate('/alunos');
+      navigate('/professor');
     } else {
       alert('Usuário ou senha inválidos');
     }
