@@ -2,21 +2,12 @@ import React from 'react';
 import { Button } from "../styles/Button";
 import { ButtonsContainer } from "../styles/ButtonsContainer";
 
-export const Buttons = () => {
- // const [showLogin, setShowLogin] = useState(false);
-
- // const handleAlunoClick = () => {
-  //  setShowLogin(true);
- // };
-
- // const handleCloseLogin = () => {
-  //  setShowLogin(false);
- // };
-
+export const Buttons = ({ onEstagioClick }) => {
+  
   return (
     <>
       <ButtonsContainer>
-        <Button>Estágio</Button>
+        <Button onClick={onEstagioClick}>Estágio</Button>
         <Button>Equivalencia Profissional</Button>
         <Button>Iniciação Cientifica</Button>
       </ButtonsContainer>

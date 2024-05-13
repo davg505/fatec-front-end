@@ -1,13 +1,17 @@
+import React from 'react';
 import { MainMenuContainer } from "../styles/MainMenuContainer";
 
-export const MainMenu = () => (
 
+export const MainMenuAluno = ({ onMenuClick }) => {
+
+return (
+    <>
     <MainMenuContainer>
         <ul>
             <li>Home</li>
-            <li>Sobre</li>
+            <li onClick={onMenuClick}>Documento</li>
         </ul>
     </MainMenuContainer>
-    
-    
-    );
+    </>
+);
+};
