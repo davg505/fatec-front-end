@@ -5,7 +5,6 @@ import { TextForButtonContainer } from "../styles/TextForButtonContainer";
 export const TabelaAluno = () => {
   const [alunos, setAlunos] = useState([]);
 
-  
 
   return (
     <>
