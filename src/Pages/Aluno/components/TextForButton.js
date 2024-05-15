@@ -1,9 +1,12 @@
 import { TextForButtonContainer } from "../styles/TextForButtonContainer";
 
 
+export const TextForButton = ({ onModalidadeClick }) => {
 
-export const TextForButton = () => (
+  return (
     <TextForButtonContainer>
-      <h2>Selecionar tipo de modalidade de estagio</h2>
+      <h2 onClick={onModalidadeClick}>Selecionar tipo de modalidade de estagio</h2>
     </TextForButtonContainer>
-  );
+  )
+};
+

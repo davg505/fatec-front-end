@@ -12,6 +12,7 @@ import { TextForButton } from "./TextForButton";
 export const Header = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [showModalidadeEstagio, setShowModalidadeEstagio] = useState(false);
 
   const handleEstagioClick = () => {
     setShowLogin(prevState => !prevState);
@@ -20,6 +21,10 @@ export const Header = () => {
   const handleMenuAlunoClick = () => {
     setShowMenu(prevState => !prevState);
   };
+
+  const handleMenuClick = () => {
+    setShowModalidadeEstagio(prevState => !prevState);
+  };
   const handleCloseLogin = () => {
     setShowLogin(false);
   };
@@ -27,10 +32,9 @@ export const Header = () => {
   
   return (
     <HeaderContainer>
-      <MainMenuAluno onMenuClick={handleMenuAlunoClick}/>
+      <MainMenuAluno onMenuClick={handleMenuAlunoClick} onModalidadeClick={handleMenuClick}/>
       <h1>Área Aluno: Estágio Supervisionado</h1>
-      <TextForButton/>
-      <Buttons onEstagioClick={handleEstagioClick} />
+      {showModalidadeEstagio && <TextForButton/> && <Buttons onEstagioClick={handleEstagioClick} />}
       <TabelaAluno/>
       <IformacaoEstagioAluno/>
       {showLogin && <StatusEstagio/>}
