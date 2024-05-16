@@ -6,9 +6,16 @@ export const TableContainer = styled.div`
   justify-content: center;
 `;
 
+export const TabelaSolicitacaoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+   
+`;
+
 export const Table = styled.table`
   border-collapse: collapse;
-  width: 80%;
+  width: 100%;
 `;
 
 export const Th = styled.th`

@@ -8,7 +8,7 @@ return (
             <li>Home |</li>
             <li onClick={onFiltroPesquisaClick}> Filtros de Pesquisa |</li>
             <li onClick={onListaGeralClick}>Lista geral |</li>
-            <li onClick={onStatusSolicitacaoClick}>Status de solicitações</li>
+            <li onClick={onStatusSolicitacaoClick}>Solicitações</li>
         </ul>
     </MainMenuContainer>
     </>
