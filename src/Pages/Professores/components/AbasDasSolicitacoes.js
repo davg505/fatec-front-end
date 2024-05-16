@@ -18,6 +18,7 @@ export const AbasDasSolicitacoes = () => {
 
     return (
         <AbasContainer>
+            
              <h3>Acesso as solicitações</h3>
             <Aba
                 className={abaAtiva === 'Pedidos de solicitações' ? 'aba-ativa' : 'aba'}
