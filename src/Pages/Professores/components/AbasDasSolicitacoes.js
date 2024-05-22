@@ -1,6 +1,10 @@
-import {TabelaPedidos} from "./TabelaPedidos";
 import React, { useState } from 'react';
-import { AbasContainer, Aba } from '../styles/AbasContainer';
+import { Aba, AbasContainer } from '../styles/AbasContainer';
+import { SolicitacoesCanceladas } from "./SolicitacoesCanceladas";
+import { SolicitacoesConcluidas } from "./SolicitacoesConcluidas";
+import { SolicitacoesConclusaoEstagio } from "./SolicitacoesConclusaoEstagio";
+import { TabelaPedidos } from "./TabelaPedidos";
+import { TabelaSolicitacaoEmAndamento } from "./TabelaSolicitacaoEmAndamento";
 
 
 export const AbasDasSolicitacoes = () => {
@@ -19,7 +23,7 @@ export const AbasDasSolicitacoes = () => {
     return (
         <AbasContainer>
             
-             <h3>Acesso as solicitações</h3>
+            <h3>Acesso as solicitações</h3>
             <Aba
                 className={abaAtiva === 'Pedidos de solicitações' ? 'aba-ativa' : 'aba'}
                 onClick={() => handleAbaClick('Pedidos de solicitações')}
@@ -34,28 +38,28 @@ export const AbasDasSolicitacoes = () => {
             >
                 <h3>Solicitações em andamento - Total: 15 solicitações</h3>
             </Aba>
-            {abaAtiva === 'Solicitações em andamento' && <TabelaPedidos />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
+            {abaAtiva === 'Solicitações em andamento' && <TabelaSolicitacaoEmAndamento />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
             <Aba
                 className={abaAtiva === 'Solicitações Canceladas' ? 'aba-ativa' : 'aba'}
                 onClick={() => handleAbaClick('Solicitações Canceladas')}
             >
                 <h3>Solicitações Canceladas - Total: 1 solicitações</h3>
             </Aba>
-            {abaAtiva === 'Solicitações Canceladas' && <TabelaPedidos />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
+            {abaAtiva === 'Solicitações Canceladas' && <SolicitacoesCanceladas />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
             <Aba
                 className={abaAtiva === 'Solicitações Concluidas' ? 'aba-ativa' : 'aba'}
                 onClick={() => handleAbaClick('Solicitações Concluidas')}
             >
                 <h3>Solicitações Concluidas - Total: 2 solicitações</h3>
             </Aba>
-            {abaAtiva === 'Solicitações Concluidas' && <TabelaPedidos />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
+            {abaAtiva === 'Solicitações Concluidas' && <SolicitacoesConcluidas />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
             <Aba
-                 className={abaAtiva === 'Solicitações conclusão de estágio' ? 'aba-ativa' : 'aba'}
-                 onClick={() => handleAbaClick('Solicitações conclusão de estágio')}
+                className={abaAtiva === 'Solicitações conclusão de estágio' ? 'aba-ativa' : 'aba'}
+                onClick={() => handleAbaClick('Solicitações conclusão de estágio')}
             >
                 <h3>Solicitações conclusão de estágio - Total: 2 solicitações</h3>
             </Aba>
-            {abaAtiva === 'Solicitações conclusão de estágio' && <TabelaPedidos />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
+            {abaAtiva === 'Solicitações conclusão de estágio' && <SolicitacoesConclusaoEstagio />} {/* Renderiza a tabela quando a aba 'Pedidos de solicitações' estiver ativa */}
         </AbasContainer>
     );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "../styles/Button";
 import { TabelaSolicitacaoContainer, Table, Td, Th, } from "../styles/TableContainer";
 
-export const TabelaPedidos = () => {
+export const TabelaSolicitacaoEmAndamento = () => {
   const [alunos, setAlunos] = useState([]);
 
   const handleAprovadoClick = (index) => {
@@ -40,7 +40,7 @@ export const TabelaPedidos = () => {
             </tr>
           </thead>
           <tbody>
-          {[...Array(5)].map((_, index) => (
+          {[...Array(15)].map((_, index) => (
             <tr key={index}>
             <Td>Aluno {index + 1}</Td>
             <Td>aluno{index + 1}@email.com</Td>

@@ -1,10 +1,10 @@
-import { HeaderContainer } from "../styles/HeaderContainer";
-import { Buttons } from "./Buttons";
-import {  MainMenuProfessores } from "./ MainMenuProfessores";
-import { TabelaAluno } from "./TabelaAluno";
-import {TabelaSolicitacao } from "./TabelaSolicitacao";
 import { useState } from "react";
-import {AbasDasSolicitacoes} from "./AbasDasSolicitacoes";
+import { HeaderContainer } from "../styles/HeaderContainer";
+import { MainMenuProfessores } from "./ MainMenuProfessores";
+import { AbasDasSolicitacoes } from "./AbasDasSolicitacoes";
+import { Buttons } from "./Buttons";
+import { TabelaAluno } from "./TabelaAluno";
+import { TabelaSolicitacao } from "./TabelaSolicitacao";
 
 
 export const Header = () => {
@@ -36,7 +36,6 @@ export const Header = () => {
 
    //<Buttons />
   //{FiltroPesquisa && <Buttons />}
- 
   return (
     <HeaderContainer>
       <MainMenuProfessores onFiltroPesquisaClick= {handleFiltroPesquisaClick} onListaGeralClick={handleListaGeralClick} onStatusSolicitacaoClick={handleSolicitacaoClick}/>
