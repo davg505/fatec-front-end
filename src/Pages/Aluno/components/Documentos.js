@@ -9,7 +9,7 @@ export const Documentos = () => (
         <h2>Documentos do Estagio para Download </h2>
     </TextForButtonContainer>
     <TextForButtonContainer>
-        <h2>ESTÁGIO</h2>
+        <h2>Estágio</h2>
     </TextForButtonContainer>
     <ButtonsContainer>
             <Button>TERMO DE COMPROMISSO NÃO OBRIGATÓRIO REMUNERADO</Button>
