@@ -4,12 +4,14 @@ import { Button } from "../styles/Button";
 import { ButtonsContainer } from "../styles/ButtonsContainer";
 import { Table, TableContainer, Td, Th } from "../styles/TableContainer";
 import { TextForButtonContainer } from "../styles/TextForButtonContainer";
-import SolicitarEstagio  from "./SolicitarEstagio"
+import CancelarTermoDoEstagio from "./CancelarTermoDoEstagio";
 import EnviarTermoDoEstagio from "./EnviarTermoDoEstagio";
+import SolicitarEstagio from "./SolicitarEstagio";
 
 export const StatusEstagio = () => {
     const [showModal, setShowModal] = useState(false);
     const [showEnviarTermo, setshowEnviarTermo] = useState(false);
+    const [showCancelarTermo, setshowCancelarTermo] = useState(false);
 
     const handleOpenModal = () => {
         setShowModal(true);
@@ -26,7 +28,16 @@ export const StatusEstagio = () => {
       const handleCloseEnviar = () => {
         setshowEnviarTermo(false);
       };
+
+      const handleOpenCancelar = () => {
+        setshowCancelarTermo(true);
+      };
     
+      const handleCloseCancelar = () => {
+        setshowCancelarTermo(false);
+      };
+
+
       const handleSubmit = (data) => {
         console.log("Dados enviados:", data);
         // Aqui você pode adicionar a lógica para lidar com os dados enviados, como fazer uma chamada de API
@@ -78,7 +89,7 @@ export const StatusEstagio = () => {
           <ButtonsContainer>
             <Button onClick={handleOpenModal}>Solicitar Estágio</Button>
             <Button onClick={handleOpenEnviar}>Enviar Termo do Estágio</Button>
-            <Button>Cancelar Solicitação</Button>
+            <Button onClick={handleOpenCancelar}>Cancelar Solicitação</Button>
           </ButtonsContainer>
           <TextForButtonContainer>
             <h2>Durante estágio</h2>
@@ -101,9 +112,14 @@ export const StatusEstagio = () => {
             handleClose={handleCloseModal}
             handleSubmit={handleSubmit}
           />
-           <EnviarTermoDoEstagio
+          <EnviarTermoDoEstagio
             show={showEnviarTermo}
             handleClose={handleCloseEnviar}
+            handleSubmit={handleSubmit}
+          />
+          <CancelarTermoDoEstagio
+            show={showCancelarTermo}
+            handleClose={handleCloseCancelar}
             handleSubmit={handleSubmit}
           />
         </>
