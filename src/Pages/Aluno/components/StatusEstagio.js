@@ -7,8 +7,11 @@ import { TextForButtonContainer } from "../styles/TextForButtonContainer";
 import AlterarStutusEstagio from "./AlterarStutusEstagio";
 import CancelarTermoDoEstagio from "./CancelarTermoDoEstagio";
 import EnviarTermoDoEstagio from "./EnviarTermoDoEstagio";
+import FichaAvaliacao from "./FichaAvaliacao";
+import FinalizarEstagio from "./FinalizarEstagio";
 import ProrrogacaoPeriodoEstagio from "./ProrrogacaoPeriodoEstagio";
 import RecisaoEstagio from "./RecisaoEstagio";
+import RelatorioEstagio from "./RelatorioEstagio";
 import SolicitarEstagio from "./SolicitarEstagio";
 
 export const StatusEstagio = () => {
@@ -18,7 +21,35 @@ export const StatusEstagio = () => {
     const [showProrrogacao, setshowProrrogacao] = useState(false);
     const [showAlterar, setshowAlterar] = useState(false);
     const [showRecisao, setshowRecisao] = useState(false);
+    const [showRelatorio, setshowRelatorio] = useState(false);
+    const [showFicha, setshowFicha] = useState(false);
+    const [showFinalizar, setshowFinalizar] = useState(false);
     
+
+    const handleOpenFinalizar = () => {
+      setshowFinalizar(true);
+    };
+
+    const handleCloseFinalizar = () => {
+      setshowFinalizar(false);
+    }  
+
+    const handleOpenFicha = () => {
+      setshowFicha(true);
+    };
+
+    const handleCloseFicha = () => {
+      setshowFicha(false);
+    } 
+
+    const handleOpenRelatorio = () => {
+      setshowRelatorio(true);
+    };
+
+    const handleCloseRelatorio = () => {
+      setshowRelatorio(false);
+    };
+
     const handleOpenRecisao = () => {
       setshowRecisao(true);
     };
@@ -133,9 +164,9 @@ export const StatusEstagio = () => {
             <h2>Entregas finais estágio</h2>
           </TextForButtonContainer>
           <ButtonsContainer>
-            <Button>Enviar Relatório de estágio supervisionado</Button>
-            <Button>Enviar Ficha de avaliação do superior imediato</Button>
-            <Button>Enviar Finalização do Estágio</Button>
+            <Button onClick={handleOpenRelatorio}>Relatório de estágio supervisionado</Button>
+            <Button onClick={handleOpenFicha}>Ficha de avaliação do superior imediato</Button>
+            <Button onClick={handleOpenFinalizar}>Finalização do Estágio</Button>
           </ButtonsContainer>
           <SolicitarEstagio
             show={showModal}
@@ -165,6 +196,21 @@ export const StatusEstagio = () => {
           <RecisaoEstagio
             show={showRecisao}
             handleClose={handleCloseRecisao}
+            handleSubmit={handleSubmit}
+          />
+          <RelatorioEstagio
+            show={showRelatorio}
+            handleClose={handleCloseRelatorio}
+            handleSubmit={handleSubmit}
+          />
+          <FichaAvaliacao
+            show={showFicha}
+            handleClose={handleCloseFicha}
+            handleSubmit={handleSubmit}
+          />
+          <FinalizarEstagio
+            show={showFinalizar}
+            handleClose={handleCloseFinalizar}
             handleSubmit={handleSubmit}
           />
         </>

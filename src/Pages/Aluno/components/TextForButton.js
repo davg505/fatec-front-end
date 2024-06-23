@@ -5,7 +5,7 @@ export const TextForButton = ({ onModalidadeClick }) => {
 
   return (
     <TextForButtonContainer>
-      <h2 onClick={onModalidadeClick}>Selecionar tipo de modalidade de estagio</h2>
+      <h2 onClick={onModalidadeClick}>Selecionar tipo de modalidade</h2>
     </TextForButtonContainer>
   )
 };

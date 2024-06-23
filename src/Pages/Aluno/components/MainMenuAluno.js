@@ -10,7 +10,7 @@ return (
         <ul>
             <li>Home |</li>
             <li onClick={onMenuClick}>Documentos |</li>
-            <li onClick={onModalidadeClick}>Modalidade de estagio</li>
+            <li onClick={onModalidadeClick}>Modalidades</li>
         </ul>
     </MainMenuContainer>
     </>
