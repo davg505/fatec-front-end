@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import { ModalBackground, ModalContainer, Input, LabelContainer, CheckboxContainer  } from "../styles/SolicitarEstagio";
 import { Button } from "../styles/Button";
 import { ButtonsContainer } from "../styles/ButtonsContainer";
+import { CheckboxContainer, Input, LabelContainer, ModalBackground, ModalContainer } from "../styles/SolicitarEstagio";
 
 
 const SolicitarEstagio = ({ show, handleClose, handleSubmit }) => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [dataIncial, setDataIncial] = useState("");
+    const [dataFinal, setDataFinal] = useState("");
+    const [cnpj, setcnpj] = useState("");
+    const [local, setlocal] = useState("");
+    const [superior, setSupervisor] = useState("");
+    const [tel, settel] = useState("");
     const [estagioTipo, setEstagioTipo] = useState("obrigatorio");
     const [estagioModelo, setEstagioModelo] = useState("Remunerado");
+   
   
     const onSubmit = () => {
-        handleSubmit({ email, name, estagioTipo, estagioModelo });
+        handleSubmit({ email, name, estagioTipo, estagioModelo, dataIncial, dataFinal, cnpj, local, superior, tel });
         handleClose();
       };
   
@@ -73,16 +80,16 @@ const SolicitarEstagio = ({ show, handleClose, handleSubmit }) => {
               <label>Data inicial estágio:</label>
               <Input
                 type="date"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={dataIncial}
+                onChange={(e) => setDataIncial(e.target.value)}
               />
             </LabelContainer>
             <LabelContainer>
               <label>Data final estágio:</label>
               <Input
                 type="date"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={dataFinal}
+                onChange={(e) => setDataFinal(e.target.value)}
               />
             </LabelContainer>
             <LabelContainer>
@@ -97,16 +104,40 @@ const SolicitarEstagio = ({ show, handleClose, handleSubmit }) => {
               <label>CNPJ:</label>
               <Input
                 type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={cnpj}
+                onChange={(e) => setcnpj(e.target.value)}
               />
             </LabelContainer>
             <LabelContainer>
-              <label>Endereço da empresa:</label>
+              <label>Local do Estágio (município):</label>
+              <Input
+                type="text"
+                value={local}
+                onChange={(e) => setlocal(e.target.value)}
+              />
+            </LabelContainer>
+            <LabelContainer>
+              <label>Supervisor:</label>
+              <Input
+                type="text"
+                value={superior}
+                onChange={(e) => setSupervisor(e.target.value)}
+              />
+            </LabelContainer>
+            <LabelContainer>
+              <label>Email:</label>
               <Input
                 type="text"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </LabelContainer>
+            <LabelContainer>
+              <label>Tel:</label>
+              <Input
+                type="text"
+                value={tel}
+                onChange={(e) => settel(e.target.value)}
               />
             </LabelContainer>
             <ButtonsContainer>

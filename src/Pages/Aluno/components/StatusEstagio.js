@@ -4,14 +4,44 @@ import { Button } from "../styles/Button";
 import { ButtonsContainer } from "../styles/ButtonsContainer";
 import { Table, TableContainer, Td, Th } from "../styles/TableContainer";
 import { TextForButtonContainer } from "../styles/TextForButtonContainer";
+import AlterarStutusEstagio from "./AlterarStutusEstagio";
 import CancelarTermoDoEstagio from "./CancelarTermoDoEstagio";
 import EnviarTermoDoEstagio from "./EnviarTermoDoEstagio";
+import ProrrogacaoPeriodoEstagio from "./ProrrogacaoPeriodoEstagio";
+import RecisaoEstagio from "./RecisaoEstagio";
 import SolicitarEstagio from "./SolicitarEstagio";
 
 export const StatusEstagio = () => {
     const [showModal, setShowModal] = useState(false);
     const [showEnviarTermo, setshowEnviarTermo] = useState(false);
     const [showCancelarTermo, setshowCancelarTermo] = useState(false);
+    const [showProrrogacao, setshowProrrogacao] = useState(false);
+    const [showAlterar, setshowAlterar] = useState(false);
+    const [showRecisao, setshowRecisao] = useState(false);
+    
+    const handleOpenRecisao = () => {
+      setshowRecisao(true);
+    };
+
+    const handleCloseRecisao = () => {
+      setshowRecisao(false);
+    };
+
+    const handleOpenAlterar = () => {
+      setshowAlterar(true);
+    };
+
+    const handleCloseAlterar = () => {
+      setshowAlterar(false);
+    };
+
+    const handleOpenProrrogacao = () => {
+      setshowProrrogacao(true);
+    };
+
+    const handleCloseProrrogacao = () => {
+      setshowProrrogacao(false);
+    };
 
     const handleOpenModal = () => {
         setShowModal(true);
@@ -95,9 +125,9 @@ export const StatusEstagio = () => {
             <h2>Durante estágio</h2>
           </TextForButtonContainer>
           <ButtonsContainer>
-            <Button>Enviar Prorrogação de período</Button>
-            <Button>Enviar Estágio não Obrigatório para Obrigatório</Button>
-            <Button>Enviar Rescisão do termo de compromisso de estágio</Button>
+            <Button onClick={handleOpenProrrogacao}>Prorrogação de período</Button>
+            <Button onClick={handleOpenAlterar}>Estágio não Obrigatório para Obrigatório</Button>
+            <Button onClick={handleOpenRecisao}>Rescisão do termo de compromisso de estágio</Button>
           </ButtonsContainer>
           <TextForButtonContainer>
             <h2>Entregas finais estágio</h2>
@@ -120,6 +150,21 @@ export const StatusEstagio = () => {
           <CancelarTermoDoEstagio
             show={showCancelarTermo}
             handleClose={handleCloseCancelar}
+            handleSubmit={handleSubmit}
+          />
+          <ProrrogacaoPeriodoEstagio
+            show={showProrrogacao}
+            handleClose={handleCloseProrrogacao}
+            handleSubmit={handleSubmit}
+          />
+          <AlterarStutusEstagio
+            show={showAlterar}
+            handleClose={handleCloseAlterar}
+            handleSubmit={handleSubmit}
+          />
+          <RecisaoEstagio
+            show={showRecisao}
+            handleClose={handleCloseRecisao}
             handleSubmit={handleSubmit}
           />
         </>
