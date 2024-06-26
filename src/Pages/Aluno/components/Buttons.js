@@ -3,7 +3,7 @@ import { Button } from "../styles/Button";
 import { ButtonsContainer } from "../styles/ButtonsContainer";
 import { TextForButton } from "./TextForButton";
 
-export const Buttons = ({ onEstagioClick, OnEquivalenciaClick }) => {
+export const Buttons = ({ onEstagioClick, OnEquivalenciaClick, onCientificaClick }) => {
   
   return (
     <>
@@ -11,7 +11,7 @@ export const Buttons = ({ onEstagioClick, OnEquivalenciaClick }) => {
       <ButtonsContainer>
         <Button onClick={onEstagioClick}>Estágio</Button>
         <Button onClick={OnEquivalenciaClick}>Equivalencia Profissional</Button>
-        <Button>Iniciação Cientifica</Button>
+        <Button onClick={onCientificaClick}>Iniciação Cientifica</Button>
       </ButtonsContainer>
     </>
   );
