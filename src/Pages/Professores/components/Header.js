@@ -5,13 +5,15 @@ import { AbasDasSolicitacoes } from "./AbasDasSolicitacoes";
 import { Buttons } from "./Buttons";
 import { TabelaAluno } from "./TabelaAluno";
 import { TabelaSolicitacao } from "./TabelaSolicitacao";
+import { TabelaSolicitacaoEP } from "./TabelaSolicitacaoEP";
+import { TabelaSolicitacaoEstagio } from "./TabelaSolicitacaoEstagio";
+import { TabelaSolicitacaoIC } from "./TabelaSolicitacaoIC";
 
 
 export const Header = () => {
   const [FiltroPesquisa, setFiltroPesquisa] = useState(false);
   const [ListaGeral, setListaGeral] = useState(false);
   const [SolicitacaoGeral, setSolicitacaoGeral] = useState(false);
- // const [StatusSolicitacao, setStatusSolicitacao] = useState(false);
 
   const handleFiltroPesquisaClick = () => {
     setFiltroPesquisa(prevState => !prevState);
@@ -25,22 +27,14 @@ export const Header = () => {
     setSolicitacaoGeral(prevState => !prevState);
   }; 
 
-  /*  const handleStatusSolicitacaoClick = () => {
-    setStatusSolicitacao(prevState => !prevState);
-  }; */
-  
-  // onFiltroPesquisaClick, onListaGeralClick, onStatusSolicitacaoClick
-
-  //<MainMenuProfessores onFiltroPesquisaClick={handleMenuAlunoClick} onListaGeralClick={handleMenuClick} onStatusSolicitacaoClick={handleMenuClick} />
- // {showLogin && <StatusEstagio/>}
-
-   //<Buttons />
-  //{FiltroPesquisa && <Buttons />}
   return (
     <HeaderContainer>
       <MainMenuProfessores onFiltroPesquisaClick= {handleFiltroPesquisaClick} onListaGeralClick={handleListaGeralClick} onStatusSolicitacaoClick={handleSolicitacaoClick}/>
       <h1>Area Professor: Estágio Supervisionado</h1>
       <TabelaSolicitacao/>
+      <TabelaSolicitacaoEstagio/>
+      <TabelaSolicitacaoIC/>
+      <TabelaSolicitacaoEP/>
       {FiltroPesquisa && <Buttons />}
       {SolicitacaoGeral && <AbasDasSolicitacoes/>}
       {ListaGeral && <TabelaAluno/>}
