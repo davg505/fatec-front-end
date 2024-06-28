@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/fatec-front-end/static/css/main.76ed836f.css",
-    "main.js": "/fatec-front-end/static/js/main.310d2bf7.js",
+    "main.js": "/fatec-front-end/static/js/main.a9cd736c.js",
     "static/js/787.18740a1f.chunk.js": "/fatec-front-end/static/js/787.18740a1f.chunk.js",
     "static/media/logoSite2.png": "/fatec-front-end/static/media/logoSite2.19fe9f8973aa83824d6e.png",
     "index.html": "/fatec-front-end/index.html",
     "main.76ed836f.css.map": "/fatec-front-end/static/css/main.76ed836f.css.map",
-    "main.310d2bf7.js.map": "/fatec-front-end/static/js/main.310d2bf7.js.map",
+    "main.a9cd736c.js.map": "/fatec-front-end/static/js/main.a9cd736c.js.map",
     "787.18740a1f.chunk.js.map": "/fatec-front-end/static/js/787.18740a1f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.76ed836f.css",
-    "static/js/main.310d2bf7.js"
+    "static/js/main.a9cd736c.js"
   ]
 }
