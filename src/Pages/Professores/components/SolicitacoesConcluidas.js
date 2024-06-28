@@ -70,7 +70,7 @@ export const SolicitacoesConcluidas = () => {
                 <Button onClick={() => handleEnviarDiretorClick(index)}>Documentos</Button>
               </Td>
               <Td>
-                <Button onClick={() => handleEnviarDiretorClick(index)}>Dados Modalidade</Button>
+                <Button onClick={() => handleEnviarDiretorClick(index)}>Status Modalidade</Button>
               </Td>
             </tr>
           ))}

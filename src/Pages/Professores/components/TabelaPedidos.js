@@ -28,6 +28,7 @@ export const TabelaPedidos = () => {
     // Lógica para marcar o aluno como reprovado
   };
 
+
   const handleEnviarDiretorClick = (index) => {
     // Lógica para marcar o aluno como reprovado
   };
@@ -70,7 +71,7 @@ export const TabelaPedidos = () => {
                 <Button onClick={() => handleEnviarDiretorClick(index)}>Documentos</Button>
               </Td>
               <Td>
-                <Button onClick={() => handleEnviarDiretorClick(index)}>Dados Modalidade</Button>
+                <Button onClick={() => handleEnviarDiretorClick(index)}>Status Modalidade</Button>
               </Td>
               <Td>
                 <Button onClick={() => handleAprovadoClick(index)}>Aprovado</Button>
