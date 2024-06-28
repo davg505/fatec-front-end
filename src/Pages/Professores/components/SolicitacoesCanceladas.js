@@ -3,7 +3,22 @@ import { Button } from "../styles/Button";
 import { TabelaSolicitacaoContainer, Table, Td, Th, } from "../styles/TableContainer";
 
 export const SolicitacoesCanceladas = () => {
-  const [alunos, setAlunos] = useState([]);
+  const [alunos] = useState([...Array(1)].map((_, index) => {
+    const options = ["Estágio", "Equivalência Profissional", "Iniciação Científica"];
+    return {
+      nome: `Aluno ${index + 1}`,
+      email: `aluno${index + 1}@email.com`,
+      ra: '123456',
+      curso: `Curso ${index % 3 + 1}`,
+      semestre: index % 2 + 1,
+      dataInicial: '2022-01-01',
+      dataFinal: '2022-06-30',
+      ano: '2022',
+      modalidade: options[Math.floor(Math.random() * options.length)]
+    };
+  }));
+
+  const [modalidadeFiltro, setModalidadeFiltro] = useState(null);
 
   const handleAprovadoClick = (index) => {
     // Lógica para marcar o aluno como aprovado
@@ -17,66 +32,61 @@ export const SolicitacoesCanceladas = () => {
     // Lógica para marcar o aluno como reprovado
   };
 
-
+  const filteredAlunos = modalidadeFiltro ? alunos.filter(aluno => aluno.modalidade === modalidadeFiltro) : alunos;
 
   return (
-    <>
-      <TabelaSolicitacaoContainer>
-        <Table>
-          <thead>
-            <tr>
-              <Th>Nome do aluno</Th>
-              <Th>Email</Th>
-              <Th>Ra</Th>
-              <Th>Curso</Th>
-              <Th>Semestre</Th>
-              <Th>Data Inicial</Th>
-              <Th>Data Final</Th>
-              <Th>Ano</Th>
-              <Th>Agente Integrador</Th>
-              <Th>Empresa</Th>
-              <Th>Status</Th>
-              <Th>Obrigatorio</Th>
-            </tr>
-          </thead>
-          <tbody>
-          {[...Array(1)].map((_, index) => (
+    <TabelaSolicitacaoContainer>
+      <Table>
+        <thead>
+          <tr>
+            <Th>Nome do aluno</Th>
+            <Th>Email</Th>
+            <Th>Ra</Th>
+            <Th>Curso</Th>
+            <Th>Semestre</Th>
+            <Th>Data Inicial</Th>
+            <Th>Data Final</Th>
+            <Th>Ano</Th>
+            <Th>Modalidades</Th>
+            <Th><Button onClick={() => setModalidadeFiltro("Estágio")}>Estágio</Button></Th>
+            <Th><Button onClick={() => setModalidadeFiltro("Equivalência Profissional")}>Equivalência Profissional</Button></Th>
+            <Th><Button onClick={() => setModalidadeFiltro("Iniciação Científica")}>Iniciação Científica</Button></Th>
+            <Th><Button onClick={() => setModalidadeFiltro(null)}>Mostrar Todos</Button></Th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredAlunos.map((aluno, index) => (
             <tr key={index}>
-            <Td>Aluno {index + 1}</Td>
-            <Td>aluno{index + 1}@email.com</Td>
-            <Td>123456</Td>
-            <Td>Curso {index % 3 + 1}</Td>
-            <Td>{index % 2 + 1}</Td>
-            <Td>2022-01-01</Td>
-            <Td>2022-06-30</Td>
-            <Td>2022</Td>
-            <Td>Agente {index % 5 + 1}</Td>
-            <Td>Empresa {index % 4 + 1}</Td>
-            <Td>Ativo</Td>
-            <Td>Sim</Td>
-            <Td>
-                <Button onClick={() => handleEnviarDiretorClick(index)}>Documentos do estagio</Button> {/* Botão de Reprovado */}
-            </Td>
-            <Td>
-                <Button onClick={() => handleEnviarDiretorClick(index)}>Dados do estagio</Button> {/* Botão de Reprovado */}
-            </Td>
-            <Td>
-                <Button onClick={() => handleAprovadoClick(index)}>Aprovado</Button> {/* Botão de Aprovado */}
-            </Td>
-            <Td>
-                <Button onClick={() => handleReprovadoClick(index)}>Reprovado</Button> {/* Botão de Reprovado */}
-            </Td>
-            <Td>
-                <Button onClick={() => handleEnviarDiretorClick(index)}>Enviar Diretor</Button> {/* Botão de Reprovado */}
-            </Td>
+              <Td>{aluno.nome}</Td>
+              <Td>{aluno.email}</Td>
+              <Td>{aluno.ra}</Td>
+              <Td>{aluno.curso}</Td>
+              <Td>{aluno.semestre}</Td>
+              <Td>{aluno.dataInicial}</Td>
+              <Td>{aluno.dataFinal}</Td>
+              <Td>{aluno.ano}</Td>
+              <Td>{aluno.modalidade}</Td>
+              <Td>
+                <Button onClick={() => handleEnviarDiretorClick(index)}>Documentos</Button>
+              </Td>
+              <Td>
+                <Button onClick={() => handleEnviarDiretorClick(index)}>Dados Modalidade</Button>
+              </Td>
+              <Td>
+                <Button onClick={() => handleAprovadoClick(index)}>Aprovado</Button>
+              </Td>
+              <Td>
+                <Button onClick={() => handleReprovadoClick(index)}>Reprovado</Button>
+              </Td>
+              <Td>
+                <Button onClick={() => handleEnviarDiretorClick(index)}>Enviar Diretor</Button>
+              </Td>
             </tr>
-  ))}
-          </tbody>
-        </Table>
-      </TabelaSolicitacaoContainer>
-    </>
+          ))}
+        </tbody>
+      </Table>
+    </TabelaSolicitacaoContainer>
   );
 };
-
 
 
